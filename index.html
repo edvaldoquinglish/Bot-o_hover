@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Animados - CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Botões Animados CSS</h1>
+        <p class="subtitle">Passe o mouse sobre os botões para ver os efeitos!</p>
+        
+        <div class="button-grid">
+            <!-- Botão 1: Efeito Deslizante -->
+            <button class="btn slide-btn">
+                <span>Deslizante</span>
+            </button>
+            
+            <!-- Botão 2: Efeito Pulsante -->
+            <button class="btn pulse-btn">
+                Pulsante
+            </button>
+            
+            <!-- Botão 3: Efeito 3D -->
+            <button class="btn btn-3d">
+                3D Effect
+            </button>
+            
+            <!-- Botão 4: Efeito Gradiente -->
+            <button class="btn gradient-btn">
+                Gradiente
+            </button>
+            
+            <!-- Botão 5: Efeito Borda Animada -->
+            <button class="btn border-btn">
+                Borda Animada
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Feedback interativo
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
