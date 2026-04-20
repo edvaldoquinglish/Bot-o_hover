@@ -3,52 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botões Animados - CSS</title>
+    <title>Projeto 2: Botões com Efeitos Hover</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Botões Animados CSS</h1>
-        <p class="subtitle">Passe o mouse sobre os botões para ver os efeitos!</p>
+        <header>
+            <h1>Projeto 2: Botões com Efeitos Hover</h1>
+            <p class="subtitle">Domine as pseudo-classes CSS criando botões interativos e animados</p>
+        </header>
         
-        <div class="button-grid">
-            <!-- Botão 1: Efeito Deslizante -->
-            <button class="btn slide-btn">
-                <span>Deslizante</span>
-            </button>
+        <div class="main-content">
+            <section class="demo-section">
+                <h2>Demonstração dos Botões</h2>
+                
+                <div class="button-showcase">
+                    <div class="button-group">
+                        <h3>Efeitos Básicos</h3>
+                        <button class="btn btn-1">Hover Simples</button>
+                        <button class="btn btn-2">Elevação</button>
+                        <button class="btn btn-3">Mudança de Cor</button>
+                    </div>
+                    
+                    <div class="button-group">
+                        <h3>Efeitos Avançados</h3>
+                        <button class="btn btn-4">Borda Animada</button>
+                        <button class="btn btn-5">Preenchimento</button>
+                        <button class="btn btn-6">Ícone Flutuante</button>
+                    </div>
+                    
+                    <div class="button-group">
+                        <h3>Efeitos Criativos</h3>
+                        <button class="btn btn-7">Sliding Background</button>
+                        <button class="btn btn-8">Pulse Effect</button>
+                        <button class="btn btn-9">3D Press</button>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <h3>Personalizador</h3>
+                    <div class="custom-controls">
+                        <label>
+                            Cor do Botão:
+                            <input type="color" id="btn-color" value="#3498db">
+                        </label>
+                        <label>
+                            Cor do Texto:
+                            <input type="color" id="text-color" value="#ffffff">
+                        </label>
+                        <button onclick="applyCustomStyles()" class="btn-custom">Aplicar Estilos</button>
+                    </div>
+                </div>
+            </section>
             
-            <!-- Botão 2: Efeito Pulsante -->
-            <button class="btn pulse-btn">
-                Pulsante
-            </button>
-            
-            <!-- Botão 3: Efeito 3D -->
-            <button class="btn btn-3d">
-                3D Effect
-            </button>
-            
-            <!-- Botão 4: Efeito Gradiente -->
-            <button class="btn gradient-btn">
-                Gradiente
-            </button>
-            
-            <!-- Botão 5: Efeito Borda Animada -->
-            <button class="btn border-btn">
-                Borda Animada
-            </button>
+            <section class="explanation">
+                <h2>Como Funciona</h2>
+                <p>Este projeto explora as possibilidades da pseudo-classe <code>:hover</code> e transições CSS para criar botões interativos e visualmente atraentes.</p>
+                
+                <h3>Conceitos Principais</h3>
+                <ul>
+                    <li><strong>:hover:</strong> Pseudo-classe que aplica estilos quando o mouse está sobre o elemento</li>
+                    <li><strong>transition:</strong> Propriedade que suaviza mudanças de estilo</li>
+                    <li><strong>transform:</strong> Para movimentos, rotações e escalas</li>
+                    <li><strong>box-shadow:</strong> Para criar profundidade e efeitos de luz</li>
+                    <li><strong>pseudo-elementos:</strong> ::before e ::after para elementos adicionais</li>
+                </ul>
+                
+                <div class="code-explanation">
+                    <h3>Estrutura Básica de um Botão</h3>
+                    <div class="code-block">
+                        <span class="code-comment">&lt;!-- HTML --&gt;</span><br>
+                        <span class="code-tag">&lt;button</span> <span class="code-attr">class=</span><span class="code-value">"btn"</span><span class="code-tag">&gt;</span><br>
+                        &nbsp;&nbsp;Meu Botão<br>
+                        <span class="code-tag">&lt;/button&gt;</span><br><br>
+                        
+                        <span class="code-comment">/* CSS */</span><br>
+                        <span class="code-selector">.btn</span> {<br>
+                        &nbsp;&nbsp;<span class="code-property">padding</span>: <span class="code-value">12px 24px</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">background</span>: <span class="code-value">#3498db</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">color</span>: <span class="code-value">white</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">border</span>: <span class="code-value">none</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">border-radius</span>: <span class="code-value">5px</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">cursor</span>: <span class="code-value">pointer</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">transition</span>: <span class="code-value">all 0.3s ease</span>;<br>
+                        }<br><br>
+                        
+                        <span class="code-selector">.btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="code-property">background</span>: <span class="code-value">#2980b9</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">transform</span>: <span class="code-value">translateY(-2px)</span>;<br>
+                        }
+                    </div>
+                    
+                    <h3>Exemplo: Botão com Efeito de Preenchimento</h3>
+                    <div class="code-block">
+                        <span class="code-selector">.btn-fill</span> {<br>
+                        &nbsp;&nbsp;<span class="code-property">position</span>: <span class="code-value">relative</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">overflow</span>: <span class="code-value">hidden</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">z-index</span>: <span class="code-value">1</span>;<br>
+                        }<br><br>
+                        
+                        <span class="code-selector">.btn-fill::before</span> {<br>
+                        &nbsp;&nbsp;<span class="code-property">content</span>: <span class="code-value">''</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">position</span>: <span class="code-value">absolute</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">top</span>: <span class="code-value">0</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">left</span>: <span class="code-value">-100%</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">width</span>: <span class="code-value">100%</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">height</span>: <span class="code-value">100%</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">background</span>: <span class="code-value">#e74c3c</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">transition</span>: <span class="code-value">left 0.3s ease</span>;<br>
+                        &nbsp;&nbsp;<span class="code-property">z-index</span>: <span class="code-value">-1</span>;<br>
+                        }<br><br>
+                        
+                        <span class="code-selector">.btn-fill:hover::before</span> {<br>
+                        &nbsp;&nbsp;<span class="code-property">left</span>: <span class="code-value">0</span>;<br>
+                        }
+                    </div>
+                </div>
+                
+                <div class="best-practices">
+                    <h3>Boas Práticas</h3>
+                    <ul>
+                        <li>Use transições suaves (0.2s - 0.4s)</li>
+                        <li>Mantenha a usabilidade - não exagere nos efeitos</li>
+                        <li>Teste em diferentes dispositivos</li>
+                        <li>Considere a acessibilidade (contraste de cores)</li>
+                    </ul>
+                </div>
+            </section>
         </div>
+        
+        <footer>
+            <p>Botões com Efeitos Hover - Projeto CSS para Iniciantes</p>
+            <div class="nav-buttons">
+                <a href="loader.html" class="nav-btn">← Projeto Anterior</a>
+                <a href="projeto3-cards.html" class="nav-btn">Próximo Projeto →</a>
+            </div>
+        </footer>
     </div>
 
-    <script>
-        // Feedback interativo
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
